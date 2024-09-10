@@ -1,15 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <v-card>
+    <v-card-title>
+          about this store
+        </v-card-title>
+        <v-card-text>
+          <p>best online pc components</p>
+          <p>more info at: </p>
+          <p>hi@gmail.com</p>
+        </v-card-text>
+  </v-card>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+
