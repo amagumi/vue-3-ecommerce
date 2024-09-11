@@ -9,7 +9,7 @@ export default {
     },
     computed: {
         ...mapState(useProductsStore, ['products'])
-    }
+    },
 }
 
 </script>
