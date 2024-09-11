@@ -6,6 +6,12 @@ export default {
     components: {
       ProductList,
       CategoryList
+    },
+    beforeRouteUpdate(to, from) {
+        console.log('beforeRouteEnter', to.params);
+    },
+    beforeRouteEnter(to, from) {
+        console.log('beforeRouteUpdate', to.params);
     }
 }
 </script>

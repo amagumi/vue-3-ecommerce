@@ -5,11 +5,22 @@ export default {
         return {
             categories: <Array<Category>>[{
                 id: 1, 
-                name: 'Technology'
+                name: 'Technology',
+                description: 'latest tech on the country'
             }, {
                 id: 2,
-                name: 'Toys'
+                name: 'Toys',
+                description: 'best toys for kids and teenagers'
             }]
+        }
+    },
+    methods: {
+        selectCategory(categoryId: number){
+            this.$router.push({
+                name: 'category',
+                params: { categoryId }
+            })
+
         }
     }
 }
@@ -24,6 +35,7 @@ export default {
                 v-for="category in categories"
                 :key="category.id"
                 link
+                @click="selectCategory(category.id)"
             >
                 <v-list-item-title>
                     {{ category.name }}

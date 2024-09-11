@@ -3,14 +3,12 @@ import { useCartStore } from '@/stores/cart';
 import { mapActions, mapState } from 'pinia';
 import ShoppingCartItem from './ShoppingCartItem.vue';
 
-
-
 export default { 
     components: {
         ShoppingCartItem
     },
     computed: {
-        ...mapState(useCartStore, ['details'])
+        ...mapState(useCartStore, ["details"])
     }
 }
 
