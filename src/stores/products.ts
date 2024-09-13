@@ -3,7 +3,7 @@ import type { Product } from "@/model/types";
 
 export const useProductsStore = defineStore('products', {
     state: () => ({
-        order: '' as string,
+        order: 'price' as string,
         categoryId: null as number|null,
         _products: <Array<Product>>[
 
@@ -30,19 +30,19 @@ export const useProductsStore = defineStore('products', {
             },
             {
                 name: 'speaker', 
-                price: 56, 
+                price: 100, 
                 id: 4,
                 categoryId: 1
             },
             {
                 name: 'headphones', 
-                price: 450, 
+                price: 150, 
                 id: 5,
                 categoryId: 2
             },
             {
                 name: 'mouse', 
-                price: 120, 
+                price: 80, 
                 id: 6,
                 categoryId: 1
             }                
@@ -71,8 +71,16 @@ export const useProductsStore = defineStore('products', {
                 return products.sort((a, b) => a.price - b.price);
             }
 
+            if (state.order === 'priceDesc') {
+                return products.sort((a, b) => b.price - a.price);
+            }
+
             if (state.order === 'name') {
                 return products.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            if (state.order === 'nameDesc') {
+                return products.sort((a, b) => b.name.localeCompare(a.name));
             }
         }
     },
@@ -86,8 +94,17 @@ export const useProductsStore = defineStore('products', {
             
         },
 
+        orderByPriceDesc() {
+            this.order = 'priceDesc';
+            
+        },
+
         orderByName() {
             this.order = 'name';
+        },
+
+        orderByNameDesc() {
+            this.order = 'nameDesc';
         }
 
     }   

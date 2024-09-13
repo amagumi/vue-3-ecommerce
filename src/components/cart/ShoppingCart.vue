@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useCartStore } from '@/stores/cart';
-import { mapActions, mapState } from 'pinia';
+import { mapState } from 'pinia';
 import ShoppingCartItem from './ShoppingCartItem.vue';
 
 export default { 
