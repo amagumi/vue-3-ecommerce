@@ -1,6 +1,6 @@
 <script lang="ts">
 import { mapState } from 'pinia';
-import { useCategoriesStore } from '../../stores/category';
+import { useCategoriesStore } from '../../stores/categories';
 export default {
     computed: {
         ...mapState(useCategoriesStore, ['categories'])
